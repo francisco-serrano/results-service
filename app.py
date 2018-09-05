@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
 
 from properties import properties
 from ResultsDatabase import ResultsDatabase
@@ -10,14 +10,7 @@ db = ResultsDatabase(properties['db_file'])
 
 
 def format_output(raw_result, columns):
-    def format_tuple(columns_inner, raw_tuple):
-        processed_tuple = {}
-        for column, value in zip(columns_inner, raw_tuple):
-            processed_tuple[column] = value
-
-        return processed_tuple
-
-    return jsonify(list(map(lambda row: format_tuple(columns, row), raw_result)))
+    return jsonify(list(map(lambda row: dict(zip(columns, row)), raw_result)))
 
 
 @app.route('/<tablename>', methods=['GET'])

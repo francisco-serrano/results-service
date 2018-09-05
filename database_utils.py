@@ -8,7 +8,7 @@ def load_classification_into_db(db_file, csv_file, table_name):
     connection = sqlite3.connect(db_file)
 
     df = pd.read_csv(csv_file, sep=',')
-    df.to_sql(table_name, connection)
+    df.to_sql(table_name, connection, if_exists='replace')
 
     connection.commit()
     connection.close()

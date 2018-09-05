@@ -1,6 +1,6 @@
 
 properties = {
-    'db_file': 'results.db',
-    'csv_file': 'lotr-smo-separado.csv',
-    'table_name': 'lotr-smo-separado'
+    'db_file': 'data/results.db',
+    'csv_file': 'data/raw/lotr-smo-agrupado.csv',
+    'table_name': 'lotr-smo-agrupado'
 }

@@ -1,3 +1,5 @@
-# Created by .ignore support plugin (hsz.mobi)
-/lotr-smo-separado.csv
-/results.db
+/data/raw/lotr-smo-separado.csv
+/data/results.db
+/.idea
+/__pycache__
+/data/raw/lotr-smo-agrupado.csv

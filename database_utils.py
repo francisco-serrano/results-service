@@ -14,8 +14,8 @@ def load_classification_into_db(db_file, csv_file, table_name):
     connection.close()
 
 
-load_classification_into_db(
-    properties['db_file'],
-    properties['csv_file'],
-    properties['table_name']
-)
+# load_classification_into_db(
+#     properties['db_file'],
+#     properties['csv_file'],
+#     properties['table_name']
+# )

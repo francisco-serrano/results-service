@@ -23,6 +23,12 @@ def get_all_users(tablename):
     return format_output(raw_result, columns)
 
 
+@app.route('/tables', methods=['GET'])
+def get_tables():
+    result = list(map(lambda x: x[0], db.get_tables()))
+    return jsonify(result)
+
+
 @app.route('/<tablename>', methods=['POST'])
 def add_conversation(tablename):
     csv_file = StringIO(request.files['csv_file'].stream.read().decode('utf-8'))

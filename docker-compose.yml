@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: results-service.dockerfile
+    working_dir: /app
+    volumes:
+    - ./data/results.db:/app/data/results.db
+    ports:
+      - 8081:8081
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      FLASK_DEBUG: 0
+

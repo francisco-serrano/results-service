@@ -3,7 +3,7 @@ import sqlite3
 
 class ResultsDatabase:
     def __init__(self, db_dir):
-        self.connection = sqlite3.connect(db_dir)
+        self.connection = sqlite3.connect(db_dir, check_same_thread=False)
         self.cursor = self.connection.cursor()
         self.query_consulta_datos_integrante = 'select * from "{}" where "integrante" is "{}"'
         self.query_consulta_datos_todos = 'select * from "{}"'

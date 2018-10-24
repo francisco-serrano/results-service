@@ -6,7 +6,7 @@ class ResultsDatabase:
         self.connection = sqlite3.connect(db_dir, check_same_thread=False)
         self.cursor = self.connection.cursor()
         self.query_consulta_datos_integrante = 'select * from "{}" where "integrante" is "{}"'
-        self.query_consulta_datos_todos = 'select * from "{}"'
+        self.query_consulta_datos_todos = 'select * from "{}" order by "R1" desc , "R2" desc'
         self.query_consulta_columnas = 'pragma table_info("{}")'
         self.query_consulta_tablas = 'select name from sqlite_master where type = "table"'
 
